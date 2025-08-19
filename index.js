@@ -11,6 +11,11 @@ app.use(express.json());
 
 const ai = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 // gemini-1.5-flash
+
+app.get("/", (req, res) => {
+  res.send("START 🚀 Server is running...");
+}); 
+
 app.post("/api/generate", async (req, res) => {
   try {
     const { prompt } = req.body;
